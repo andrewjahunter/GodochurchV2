@@ -8,7 +8,7 @@
     <link href="styles/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
     <link href="styles/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
     <link href="styles/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
-    <script data-main="scripts/jsconfig.min.js" src="scripts/libraries/require.js"></script>
+    <script data-main="scripts/jsconfig.js" src="scripts/libraries/require.js"></script>
     <link href="styles/app.css" rel="stylesheet" />
     <link href="styles/app.mobile.min.css" rel="stylesheet" />
 
@@ -86,7 +86,8 @@
         <div role="main" class="ui-content" data-bind="with:pages.index.view">
             <div class="pgContent">
 
-                <img src="img/inapplogo.png" style="margin-bottom:30px" />
+
+                <img src="img/inapplogo.png" style="margin-bottom:30px; display:block; margin-left:auto; margin-right:auto" />
 
                 <div class="idxview idxloading" >
 
@@ -215,22 +216,22 @@
 
 
 
-                <div data-role="footer" data-position="fixed">                 
+                <div data-role="footer" data-tap-toggle="false" data-position="fixed">
                     <div data-role="navbar" class="idxview idxsignin" style="display:none">
                         <ul>
-                            <li><div  class="ui-btn ui-btn-c btnForgotInfo" >Forgot your info?</div></li>   
-                            <li><div  class="ui-btn ui-btn-a btnRegisterNewAccount" >New? Register Account</div></li>                        
+                            <li><div class="ui-btn ui-btn-c btnForgotInfo">Forgot your info?</div></li>
+                            <li><div class="ui-btn ui-btn-a btnRegisterNewAccount">New? Register Account</div></li>
                         </ul>
                     </div>
                     <div data-role="navbar" class="idxview idxforgotinfo" style="display:none">
                         <ul>
-                            <li><div  class="ui-btn ui-btn-c btnIRememberMyInfo" >I remember my info</div></li>
+                            <li><div class="ui-btn ui-btn-c btnIRememberMyInfo">I remember my info</div></li>
                         </ul>
                     </div>
 
                     <div data-role="navbar" class="idxview idxregister1 idxregister2" style="display:none">
                         <ul>
-                            <li><div  class="ui-btn  ui-btn-c btnLoginIn">I have an account. Sign In</div></li>
+                            <li><div class="ui-btn  ui-btn-c btnLoginIn">I have an account. Sign In</div></li>
                         </ul>
                     </div>
 
