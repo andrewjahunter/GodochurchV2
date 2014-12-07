@@ -11,7 +11,7 @@
     <script data-main="scripts/jsconfig.min.js" src="scripts/libraries/require.js"></script>
     <link href="styles/app.css" rel="stylesheet" />
     <link href="styles/app.mobile.min.css" rel="stylesheet" />
-
+    <link href="styles/jquery.bxslider.css" rel="stylesheet" />
   
    
     
@@ -21,7 +21,7 @@
     <!--<script src="scripts/libraries/jquery-1.11.1.min.js"></script>-->
     <!--<script src="scripts/global/appevents.js"></script>-->
     <script type="text/javascript">
-        window.gddAppInfo = 'appcode:1000|version:1.2.0'
+        window.gddAppInfo = 'appcode:2000|version:1.2.0'
      
        
     </script>
@@ -29,6 +29,16 @@
 
 </head>
 <body>
+
+    <div data-role="popup" id="popupSettings" data-theme="a" style="display:none">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            
+            <li><a href="#" id="btnGoPortals">Manage Databases</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Disable</a></li>
+            <li><a href="#">Delete</a></li>
+        </ul>
+    </div>
 
     <div data-role="popup"  id="globalErrorMessage" data-overlay-theme="b"  data-dismissible="false" style="max-width: 400px; display: none">
         <div data-role="header" data-theme="e">
@@ -78,6 +88,20 @@
 
     </div>
 
+    <div data-role="panel" class="ui-body-f" id="appMenuPanel" data-position="right" data-display="push" style="display: none; background-color: #303030 ">
+
+
+        <ul data-role="listview" data-inset="true" data-theme="f" data-count-theme="a">
+
+            <li><a href="#" data-theme="a">Messages <span class="ui-li-count">12</span></a></li>
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Give</a></li>
+        </ul>
+
+    </div>
+
 
 
     <div data-role="page" id="pg_index" data-theme="a" style="display:none" >
@@ -87,10 +111,13 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content" data-bind="with:pages.index.view">
+          
+
+           
             <div class="pgContent">
 
 
-                <img src="img/inapplogo.png" style="margin-bottom:30px; display:block; margin-left:auto; margin-right:auto" />
+                <img src="img/inapplogo.png" style="margin-bottom:5px; display:block; margin-left:auto; margin-right:auto" />
 
                 <div class="idxview idxloading" >
 
@@ -102,7 +129,36 @@
                 <div class="idxview idxstart" style="display:none"  >
                    
 
-                    <div style="height:150px"></div>
+
+                        <style>
+                            .idxScrollerImg {
+                                width:250px;
+                                height:250px
+                            }
+                          
+
+                          
+                        </style>
+
+                    <a href="#" id="simLeft">Left</a> | <a href="#" id="simRight">Right</a>
+                    <div  style="margin-left:auto; margin-right:auto; width:250px; height:300px;">
+                        
+                        <ul id="idxBxSlider" style="width: 250px; margin-left: auto;" >
+                            <li><img src="img/startscroller/two.png" class="idxScrollerImg" /></li>
+                            <li><img src="img/startscroller/one.png" class="idxScrollerImg" /></li>
+                            <li><img src="img/startscroller/three.png" class="idxScrollerImg" /></li>
+                        </ul>
+
+
+                    </div>
+
+                      
+                        
+                       
+                      
+
+
+                
                     <div class="ui-btn ui-mini   ui-btn-c btnRegisterNewAccount" >Are you new? Sign Up</div>
                     <div class="ui-btn ui-mini btnLoginIn " >Have an account? Sign In</div>
 
@@ -112,10 +168,6 @@
                     <input type="text" id="txtUserName" value="" placeholder="enter username">
                     <input type="password" id="txtPassword" value="" placeholder="enter password">
                     <div class="ui-btn ui-mini" id="btnSignIn">Sign In</div>
-                   
-                  
-
-
                 </div>
 
                 <div class="idxview idxforgotinfo" style="display:none">
@@ -126,108 +178,138 @@
                 </div>
 
                 <div class="idxview idxregister1" style="display:none">
-                    <form id="frmReg1">
+
+                    <script id="portallist-template" type="text/html">
+                        <li >
+                            <a data-bind="attr: {href: '#','data-id':portalId,'data-name':portalName}" class="chooseportal">
+                                <h5 data-bind="text: portalName"></h5>
+                            </a>
+                        </li>
+                    </script>
+                    <div class="ui-content" style="text-align:center">
+                        Choose your church or ministry
+                    </div>
+                    <ul data-role="listview" data-filter="true" data-filter-placeholder="Search churches..."  data-inset="true" data-theme="a" id="idxPortalList" data-bind="template: { name: 'portallist-template', foreach: $root.cache.appPortals}"></ul>
+
+                    <!--<div class="ui-btn ui-mini ui-btn-inline btnGoReg2 " data-view="1">Next</div>-->
+
+                </div>
+
+                <div class="idxview idxregister2" style="display:none">
+                    <div class="ui-content" style="text-align:center">
+                        <div data-bind="html:regInfo.portalName"></div>
+                    </div>
+                    
+                    <form id="frmReg2">
                         <input type="text" class="regInput" id="txtRegFName" name="txtRegFName" data-bind="value:regInfo.firstName" placeholder="first name">
                         <input type="text" class="regInput" id="txtRegLName" name="txtRegLName" data-bind="value:regInfo.lastName" placeholder="last name">
-                 
+                        <input type="tel" class="regInput" id="txtRegMobile" name="txtRegMobile" data-bind="value:regInfo.mobileNumber" placeholder="mobile number">
+
                         <input type="email" class="regInput" id="txtRegEmail" name="txtRegEmail" data-bind="value:regInfo.email" placeholder="email address">
                          
-                    </form>                
-                    <div class="ui-btn ui-mini btnGoReg2" >Next</div>  
+                    </form>   
+                    <div class="ui-btn ui-mini ui-btn-inline btnGoReg1" data-view="2">Back</div>             
+                    <div class="ui-btn ui-mini ui-btn-inline btnGoReg3 " data-view="2">Next</div>  
                     
                    
                                    
 
                 </div>
 
-                <div class="idxview idxregister2" style="display:none">
+                <div class="idxview idxregister3" style="display:none">
+                    <div class="ui-content" style="text-align:center">
+                        <div data-bind="html:regInfo.portalName"></div>
+                    </div>
+
                     <input type="text" class="regInput" id="txtRegUserName" placeholder="user name">
                     <input type="password" class="regInput" id="txtRegPwd" placeholder="password">
                     <input type="password" class="regInput" id="txtRegPwdC" placeholder="confirm password">
-                    <div class="ui-btn ui-mini ui-btn-inline btnGoReg1" >Back</div>
-
-                    <div class="ui-btn ui-mini ui-btn-inline" id="btnRegisterAccount">Register</div>
+                    <div class="ui-btn ui-mini btnGoReg2 ui-btn-inline" data-view="3">Back</div>
+                    <div class="ui-btn ui-mini ui-btn-inline" data-view="3" id="btnRegisterAccount">Register</div>
+                   
                   
                 </div>
 
-
-                <div class="idxview idxEmailValidate" style="display:none">
-                   
-                   
-                   
-                    <p >
-                        The email address connected to this account has not yet been verified. Please click the link in the email we sent to you.
-                    </p>
-
-                    <div class="ui-btn ui-mini ui-btn-a" id="btnResendEmail">Resend Email</div>
-                   
-                </div>
-
-
-                <div data-role="popup" id="popupPwdInfo" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;">
-                    <div data-role="header" >
-                        <h1>Password!</h1>
-                    </div>
-                    <div  class="ui-content">
-                        <h3 class="ui-title">Password Requirements!</h3>
-                        <div>
-                            A password must be at least 5 characters long and:
-                            <ul>
-                                <li>contain at least 1 number (0-9)</li>
-                                <li>contain at least 1  letter </li>
-                            </ul>
-                        </div>
-
-                        <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
-
-                    </div>
-                </div>
-
-
-                <div data-role="popup" id="popupEmailExists" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px">
-                    <div data-role="header">
-                        <h1>Message</h1>
-                    </div>
-                    <div class="ui-content">
-                        <h3 class="ui-title">Email Exists</h3>
-                        <div>
-                            The email '<span id="emailPopupTxt"></span>' has already been taken. Either:
-                            <ul>
-                                <li>Log into the account that is connected to this email address, OR</li>
-                                <li>Use a different email address</li>
-                            </ul>
-                        </div>
-
-                        <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
-
-                    </div>
-                </div>
-
-                <div data-role="popup" id="popupUserNameExists" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px">
-                    <div data-role="header">
-                        <h1>Message</h1>
-                    </div>
-                    <div class="ui-content">
-                        <h3 class="ui-title">UserName Exists</h3>
-                        <div>
-                            The username '<span id="usernamePopupTxt"></span>' has already been taken. Either:
-                            <ul>
-                                <li>Log into the account that is connected to this username, OR</li>
-                                <li>Choose a different username</li>
-                            </ul>
-                        </div>
-
-                        <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
-
-                    </div>
-                </div>
-
-
-
-
                
 
-            </div>
+
+                    <div class="idxview idxEmailValidate" style="display:none">
+
+
+
+                        <p>
+                            The email address connected to this account has not yet been verified. Please click the link in the email we sent to you.
+                        </p>
+
+                        <div class="ui-btn ui-mini ui-btn-a" id="btnResendEmail">Resend Email</div>
+
+                    </div>
+
+
+                    <div data-role="popup" id="popupPwdInfo" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;">
+                        <div data-role="header">
+                            <h1>Password!</h1>
+                        </div>
+                        <div class="ui-content">
+                            <h3 class="ui-title">Password Requirements!</h3>
+                            <div>
+                                A password must be at least 5 characters long and:
+                                <ul>
+                                    <li>contain at least 1 number (0-9)</li>
+                                    <li>contain at least 1  letter </li>
+                                </ul>
+                            </div>
+
+                            <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
+
+                        </div>
+                    </div>
+
+
+                    <div data-role="popup" id="popupEmailExists" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px">
+                        <div data-role="header">
+                            <h1>Message</h1>
+                        </div>
+                        <div class="ui-content">
+                            <h3 class="ui-title">Email Exists</h3>
+                            <div>
+                                The email '<span id="emailPopupTxt"></span>' has already been taken. Either:
+                                <ul>
+                                    <li>Log into the account that is connected to this email address, OR</li>
+                                    <li>Use a different email address</li>
+                                </ul>
+                            </div>
+
+                            <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
+
+                        </div>
+                    </div>
+
+                    <div data-role="popup" id="popupUserNameExists" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px">
+                        <div data-role="header">
+                            <h1>Message</h1>
+                        </div>
+                        <div class="ui-content">
+                            <h3 class="ui-title">UserName Exists</h3>
+                            <div>
+                                The username '<span id="usernamePopupTxt"></span>' has already been taken. Either:
+                                <ul>
+                                    <li>Log into the account that is connected to this username, OR</li>
+                                    <li>Choose a different username</li>
+                                </ul>
+                            </div>
+
+                            <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
 
 
 
@@ -240,12 +322,12 @@
 
             <div data-role="navbar" class="idxview idxsignin" style="display:none">
                 <ul>
-                    <li><div class="ui-btn ui-btn-c btnForgotInfo">Forgot your info?</div></li>
-                    <li><div class="ui-btn ui-btn-a btnRegisterNewAccount">New? Register Account</div></li>
+                    <li><div class="ui-btn ui-btn-c btnForgotInfo">Forgot info?</div></li>
+                    <li><div class="ui-btn ui-btn-a btnRegisterNewAccount">Register account?</div></li>
                 </ul>
             </div>
 
-            <div data-role="navbar" class="idxview idxregister1 idxregister2" style="display:none">
+            <div data-role="navbar" class="idxview idxregister1 idxregister2 idxregister3" style="display:none">
                 <ul>
                     <li><div class="ui-btn  ui-btn-c btnLoginIn">I have an account. Sign In</div></li>
                 </ul>
