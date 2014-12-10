@@ -3,6 +3,7 @@
 <head>
     <title></title>
 
+   
     <!--<link href="styles/jquery-ui.structure.min.css" rel="stylesheet" />
     <link href="styles/jquery-ui.min.css" rel="stylesheet" />-->
     <link href="styles/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
@@ -23,6 +24,8 @@
     <script type="text/javascript">
         window.gddAppInfo = 'appcode:2000|version:1.2.0'
      
+      
+    
        
     </script>
     <script type="text/javascript" src="cordova.js"></script>
@@ -78,29 +81,17 @@
 
        
         <ul data-role="listview" data-inset="true" data-theme="f"  data-count-theme="a">
-           
-            <li><a href="#" data-theme="a">Messages <span class="ui-li-count">12</span></a></li>
-            <li><a href="#">Groups</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Give</a></li>
+            <li><a href="#" id="btnAppMenuGoHome">Home</a></li>
+            <!--<li><a href="#" data-theme="a">Messages <span class="ui-li-count">12</span></a></li>
+            <li class="groupsModule"><a href="#">Groups</a></li>
+            <li><a href="#">Events</a></li>-->
+            <li><a href="#" id="btnAppMenuGoNews">News</a></li>
+            <!--<li><a href="#">Give</a></li>-->
         </ul>
 
     </div>
 
-    <div data-role="panel" class="ui-body-f" id="appMenuPanel" data-position="right" data-display="push" style="display: none; background-color: #303030 ">
-
-
-        <ul data-role="listview" data-inset="true" data-theme="f" data-count-theme="a">
-
-            <li><a href="#" data-theme="a">Messages <span class="ui-li-count">12</span></a></li>
-            <li><a href="#">Groups</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Give</a></li>
-        </ul>
-
-    </div>
+  
 
 
 
@@ -140,10 +131,9 @@
                           
                         </style>
 
-                    <a href="#" id="simLeft">Left</a> | <a href="#" id="simRight">Right</a>
                     <div  style="margin-left:auto; margin-right:auto; width:250px; height:300px;">
                         
-                        <ul id="idxBxSlider" style="width: 250px; margin-left: auto;" >
+                        <ul id="idxBxSlider" style="width: 250px" >
                             <li><img src="img/startscroller/two.png" class="idxScrollerImg" /></li>
                             <li><img src="img/startscroller/one.png" class="idxScrollerImg" /></li>
                             <li><img src="img/startscroller/three.png" class="idxScrollerImg" /></li>
@@ -165,13 +155,13 @@
                 </div>
 
                 <div class="idxview idxsignin" style="display:none">
-                    <input type="text" id="txtUserName" value="" placeholder="enter username">
-                    <input type="password" id="txtPassword" value="" placeholder="enter password">
+                    <input type="text" data-clear-btn="true" id="txtUserName" value="" placeholder="enter username">
+                    <input type="password" data-clear-btn="true" id="txtPassword" value="" placeholder="enter password">
                     <div class="ui-btn ui-mini" id="btnSignIn">Sign In</div>
                 </div>
 
                 <div class="idxview idxforgotinfo" style="display:none">
-                    <input type="text" id="txtRecover" value="" placeholder="email OR username">
+                    <input type="text" id="txtRecover" data-clear-btn="true" value="" placeholder="email OR username">
 
                     <div class="ui-btn ui-mini" id="btnRecoverInfo">Recover Info</div>
                     
@@ -186,26 +176,26 @@
                             </a>
                         </li>
                     </script>
-                    <div class="ui-content" style="text-align:center">
+                    <div  style="text-align:center">
                         Choose your church or ministry
                     </div>
-                    <ul data-role="listview" data-filter="true" data-filter-placeholder="Search churches..."  data-inset="true" data-theme="a" id="idxPortalList" data-bind="template: { name: 'portallist-template', foreach: $root.cache.appPortals}"></ul>
+                    <ul data-role="listview" class="ui-mini" data-filter="true" data-filter-placeholder="Search churches..."  data-inset="true" data-theme="a" id="idxPortalList" data-bind="template: { name: 'portallist-template', foreach: $root.cache.appPortals}"></ul>
 
                     <!--<div class="ui-btn ui-mini ui-btn-inline btnGoReg2 " data-view="1">Next</div>-->
 
                 </div>
 
                 <div class="idxview idxregister2" style="display:none">
-                    <div class="ui-content" style="text-align:center">
+                    <div  style="text-align:center">
                         <div data-bind="html:regInfo.portalName"></div>
                     </div>
                     
                     <form id="frmReg2">
-                        <input type="text" class="regInput" id="txtRegFName" name="txtRegFName" data-bind="value:regInfo.firstName" placeholder="first name">
-                        <input type="text" class="regInput" id="txtRegLName" name="txtRegLName" data-bind="value:regInfo.lastName" placeholder="last name">
-                        <input type="tel" class="regInput" id="txtRegMobile" name="txtRegMobile" data-bind="value:regInfo.mobileNumber" placeholder="mobile number">
+                        <input type="text" class="regInput" data-clear-btn="true" id="txtRegFName" name="txtRegFName" data-bind="value:regInfo.firstName" placeholder="first name">
+                        <input type="text" class="regInput" data-clear-btn="true" id="txtRegLName" name="txtRegLName" data-bind="value:regInfo.lastName" placeholder="last name">
+                        <input type="tel" class="regInput" data-clear-btn="true" id="txtRegMobile" name="txtRegMobile" data-bind="value:regInfo.mobileNumber" placeholder="mobile number">
 
-                        <input type="email" class="regInput" id="txtRegEmail" name="txtRegEmail" data-bind="value:regInfo.email" placeholder="email address">
+                        <input type="email" class="regInput" data-clear-btn="true" id="txtRegEmail" name="txtRegEmail" data-bind="value:regInfo.email" placeholder="email address">
                          
                     </form>   
                     <div class="ui-btn ui-mini ui-btn-inline btnGoReg1" data-view="2">Back</div>             
@@ -217,13 +207,13 @@
                 </div>
 
                 <div class="idxview idxregister3" style="display:none">
-                    <div class="ui-content" style="text-align:center">
+                    <div  style="text-align:center">
                         <div data-bind="html:regInfo.portalName"></div>
                     </div>
 
-                    <input type="text" class="regInput" id="txtRegUserName" placeholder="user name">
-                    <input type="password" class="regInput" id="txtRegPwd" placeholder="password">
-                    <input type="password" class="regInput" id="txtRegPwdC" placeholder="confirm password">
+                    <input type="text" class="regInput" data-clear-btn="true" id="txtRegUserName" placeholder="user name">
+                    <input type="password" class="regInput" data-clear-btn="true" id="txtRegPwd" placeholder="password">
+                    <input type="password" class="regInput" data-clear-btn="true" id="txtRegPwdC" placeholder="confirm password">
                     <div class="ui-btn ui-mini btnGoReg2 ui-btn-inline" data-view="3">Back</div>
                     <div class="ui-btn ui-mini ui-btn-inline" data-view="3" id="btnRegisterAccount">Register</div>
                    
@@ -237,9 +227,9 @@
 
 
 
-                        <p>
-                            The email address connected to this account has not yet been verified. Please click the link in the email we sent to you.
-                        </p>
+                        <div>
+                            The email address connected to this account has not yet been verified. Please click the link in the email we sent to you. Click 'Resend Email' below to have the email resent to you.
+                        </div>
 
                         <div class="ui-btn ui-mini ui-btn-a" id="btnResendEmail">Resend Email</div>
 
@@ -264,6 +254,23 @@
 
                         </div>
                     </div>
+
+                <div data-role="popup" id="popupMissingChurch" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;">
+                    <div data-role="header">
+                        <h1>Missing Church!</h1>
+                    </div>
+                    <div class="ui-content">
+                        <div>Your church/ministry may not be listed for one of two reasons:</div>
+                        <ol>
+                            <li>They are not registered with Godochurch</li>
+                            <li>The church is not registered with this application.</li>
+                        </ol>
+                        <div>Either way please contact your church/ministry office and direct them to www.godochurch.com</div>
+
+                        <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
+
+                    </div>
+                </div>
 
 
                     <div data-role="popup" id="popupEmailExists" data-theme="a" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px">
@@ -326,8 +333,15 @@
                     <li><div class="ui-btn ui-btn-a btnRegisterNewAccount">Register account?</div></li>
                 </ul>
             </div>
+            <div data-role="navbar" class="idxview idxregister1 " style="display:none">
+                <ul>
+                    <li><div class="ui-btn  ui-btn-c" id="btnIdxChurchMissing">Church Missing?</div></li>
 
-            <div data-role="navbar" class="idxview idxregister1 idxregister2 idxregister3" style="display:none">
+                    <li><div class="ui-btn  ui-btn-a btnLoginIn">Sign In</div></li>
+                </ul>
+            </div>
+
+            <div data-role="navbar" class="idxview  idxregister2 idxregister3" style="display:none">
                 <ul>
                     <li><div class="ui-btn  ui-btn-c btnLoginIn">I have an account. Sign In</div></li>
                 </ul>
