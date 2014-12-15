@@ -34,3 +34,21 @@ background-color:#f5f0f0
 .ui-nosvg .ui-icon-arrow-rr:after {
 	background-image: url("images/cust-icons-png/arrow-rr.png");
 }
+.ui-icon-group:after {
+	background-image: url("images/cust-icons-svg/group.svg"); 
+}
+.ui-nosvg .ui-icon-group:after {
+	background-image: url("images/cust-icons-png/group.png");
+}
+.ui-icon-news:after {
+	background-image: url("images/cust-icons-svg/news.svg"); 
+}
+.ui-nosvg .ui-icon-news:after {
+	background-image: url("images/cust-icons-png/news.png");
+}
+.ui-icon-searchpeople:after {
+	background-image: url("images/cust-icons-svg/searchpeople.svg"); 
+}
+.ui-nosvg .ui-icon-searchpeople:after {
+	background-image: url("images/cust-icons-png/searchpeople.png");
+}
