@@ -4,8 +4,8 @@
     <title></title>
 
    
-    <!--<link href="styles/jquery-ui.structure.min.css" rel="stylesheet" />
-    <link href="styles/jquery-ui.min.css" rel="stylesheet" />-->
+    <link href="styles/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="styles/jquery-ui.min.css" rel="stylesheet" />
     <link href="styles/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
     <link href="styles/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
     <link href="styles/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
@@ -80,11 +80,14 @@
     <div data-role="panel" class="ui-body-f" id="appMenuPanel" data-position="right" data-display="push"  style="display: none; background-color: #303030 ">
 
        
-        <ul data-role="listview" data-inset="true" data-theme="f"  data-count-theme="a">
+        <ul data-role="listview" class="ui-mini" data-inset="true" data-theme="f" data-count-theme="a">
             <li><a href="#" id="btnAppMenuGoHome">Home</a></li>
+            <li><a href="#" id="btnAppMenuGoSubs">Manage Subs</a></li>
+            <li><a href="#" id="btnAppMenuGoPeople">People</a></li>
+            <li class="groupsModule" id="btnAppMenuGoGroups"><a href="#">Groups</a></li>
             <!--<li><a href="#" data-theme="a">Messages <span class="ui-li-count">12</span></a></li>
-            <li class="groupsModule"><a href="#">Groups</a></li>
-            <li><a href="#">Events</a></li>-->
+        <li class="groupsModule"><a href="#">Groups</a></li>
+        <li><a href="#">Events</a></li>-->
             <li><a href="#" id="btnAppMenuGoNews">News</a></li>
             <!--<li><a href="#">Give</a></li>-->
         </ul>

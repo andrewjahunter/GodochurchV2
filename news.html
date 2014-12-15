@@ -32,6 +32,21 @@
         <div role="main" class="ui-content">
             <div class="pgContent">
 
+                <div class="noNews" style="display:none">
+
+                    <div class="ui-bar ui-bar-g">
+                        <div style="text-align:center">Important!</div>
+                    </div>
+                    <div class="ui-content ui-body-g" style="font-size:small">
+                        <p>We were not able to find any news items that match your subscription profile.</p>
+                        <p>You will only recieve news from churches/ministries that you have subscribed to. Please check your subscription profile.</p>
+
+                        <div class="ui-btn ui-btn-g btnGoToSubs ui-mini">Manage Subscriptions</div>
+                    </div>
+
+                </div>
+
+
                 <div class="newsFeed">
 
                     <div data-bind="foreach:newsItems">
@@ -52,7 +67,7 @@
                                 </h3>
                             </div>
                             <div class="ui-body ui-body-a">
-                                <div class="ui-content customContent">
+                                <div class="ui-content ">
                                     <div data-bind="visible:displayHeader">
                                         <div data-bind="visible:headerIsImage">
                                             <div>
@@ -99,7 +114,7 @@
 
                 <div class="newsItem" style="display:none">
 
-                    
+
 
                     <div data-bind="visible:selectedItem.displayHeader">
 
@@ -125,7 +140,7 @@
 
                     </div>
 
-                    <div class="ui-content" data-bind="html:selectedItem.content"  style="font-size: small;text-align:justify"></div>
+                    <div class="ui-content" data-bind="html:selectedItem.content" style="font-size: small;text-align:justify"></div>
                     <div style="text-align:center">
                         <a href="#" class="ui-btn ui-btn-a ui-btn-inline ui-mini btnNewsItemWebUrl">View on Web</a>
                     </div>
@@ -143,23 +158,23 @@
             </div>
         </div>
 
-        <div data-role="footer" data-tap-toggle="false" style="overflow:hidden;" data-position="fixed">
+        <div data-role="footer" data-theme="g" data-tap-toggle="false" style="overflow:hidden;" data-position="fixed">
 
-            <div data-role="navbar" class="newsFeed" >
+            <div data-role="navbar" class="newsFeed noNews">
                 <ul>
-                    <li><a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-recycle" id="btnLoadMoreNewsItems">Load More...</a></li>
-                    <li><a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-refresh btnRefreshNewsFeeds">Refresh</a></li>
-
+                    <li><a class="ui-btn ui-btn-g ui-btn-icon-left ui-icon-recycle" id="btnLoadMoreNewsItems">More...</a></li>
+                    <li><a class="ui-btn ui-btn-g ui-btn-icon-left ui-icon-refresh btnRefreshNewsFeeds">Refresh</a></li>
+                    <li><a class="ui-btn ui-btn-g ui-btn-icon-left ui-icon-gear btnGoToSubs">Subs</a></li>
 
                 </ul>
             </div>
-         
 
-            <div data-role="navbar" class="newsItem" style="display:none">
+
+            <div data-role="navbar" class="newsItem " style="display:none">
                 <ul>
-                    <li><a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-arrow-l btnNewsItemBackToFeed">Back</a></li>
-                    <li><a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-forward" id="btnShareSelectedNewsItem" >Share</a></li>
-                  
+                    <li><a href="#" class="ui-btn ui-btn-g ui-btn-icon-left ui-icon-arrow-l btnNewsItemBackToFeed">Back</a></li>
+                    <li><a href="#" class="ui-btn ui-btn-g ui-btn-icon-left ui-icon-forward" id="btnShareSelectedNewsItem">Share</a></li>
+                    <li><a href="#" class="ui-btn ui-btn-g ui-btn-icon-left ui-icon-gear btnGoToSubs">Subs</a></li>
 
                 </ul>
             </div>

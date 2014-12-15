@@ -1,11 +1,14 @@
 ﻿body {
 }
+
 .pgContents {
 /*width:250px;*/
 margin-left:auto;
 margin-right:auto;
 min-height:400px
 }
+
+.ui-autocomplete { position: absolute; cursor: default;z-index:999 !important;}
 
 .customContent {
 background-color:#f5f0f0
@@ -17,3 +20,17 @@ background-color:#f5f0f0
 .slideshow ul { list-style-type: none; margin: 0; padding: 0; }
 .slideshow li { width: 999px; height: 404px; margin: 0; border-left: 1px solid #ffffff; }
 .slideshow .bx-wrapper { position: relative; width: 3000px; top: 0px; left: 50%; margin-left: -1500px; }*/
+
+/*Custom Icons*/
+.ui-icon-save:after {
+	background-image: url("images/cust-icons-svg/save.svg"); 
+}
+.ui-nosvg .ui-icon-save:after {
+	background-image: url("images/cust-icons-png/save.png");
+}
+.ui-icon-arrow-rr:after {
+	background-image: url("images/cust-icons-svg/arrow-rr.svg"); 
+}
+.ui-nosvg .ui-icon-arrow-rr:after {
+	background-image: url("images/cust-icons-png/arrow-rr.png");
+}

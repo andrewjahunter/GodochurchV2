@@ -21,11 +21,11 @@
   </gap:config-file>
 
   <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-   
-      <string>100</string>
-    
+
+    <string>100</string>
+
   </gap:config-file>
-  
+
   <preference name="permissions"                value="none"/>
 
   <preference name="splash-screen-duration" value="3000" />
@@ -52,7 +52,7 @@
   <gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
   <gap:plugin name="org.apache.cordova.media" version="0.2.8" />
   <gap:plugin name="nl.x-services.plugins.socialsharing" />
-  
+<gap:plugin name="tr.bel.mamak.sms_plagin"  />
   <!--<feature name="http://api.phonegap.com/1.0/device" />-->
   <feature name="http://api.phonegap.com/1.0/geolocation"/>
   <feature name="http://api.phonegap.com/1.0/camera"/>
@@ -62,44 +62,44 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true" />
   </feature>
-  
+
 
   <icon src="img/icon.png" />
 
 
-  <!--<icon src="img/ios/icon120x120.png" gap:platform="ios" width="120" height="120" />
+  <icon src="img/ios/icon120x120.png" gap:platform="ios" width="120" height="120" />
   <icon src="img/ios/icon152x152.png" gap:platform="ios" width="152" height="152" />
   <icon src="img/ios/icon76x76.png" gap:platform="ios" width="76" height="76" />
   <icon src="img/ios/icon1024x1024.png" gap:platform="ios" width="1024" height="1024" />
   <icon src="img/ios/icon57x57.png" gap:platform="ios" width="57" height="57" />
-  <icon src="img/ios/icon72x72.png" gap:platform="ios" width="72" height="72" />-->
+  <icon src="img/ios/icon72x72.png" gap:platform="ios" width="72" height="72" />
 
-  <!--<icon src="img/android/icon-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
+  <icon src="img/android/icon-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
   <icon src="img/android/icon-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
   <icon src="img/android/icon-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
-  <icon src="img/android/icon-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />-->
-  
+  <icon src="img/android/icon-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
+
   <!-- Define app splash screen for each platform. -->
   <gap:splash src="img/splash.png" />
 
-  <!--<gap:splash src="img/ios/splash640x1136.png" gap:platform="ios" width="640" height="1136" />
+  <gap:splash src="img/ios/splash640x1136.png" gap:platform="ios" width="640" height="1136" />
   <gap:splash src="img/ios/splash640x960.png" gap:platform="ios" width="640" height="960" />
-  <gap:splash src="img/ios/splash1536x2048.png" gap:platform="ios" width="1536" height="2048" />-->
+  <gap:splash src="img/ios/splash1536x2048.png" gap:platform="ios" width="1536" height="2048" />
   <!-- retina iPad support: PhoneGap 2.5.0+ only -->
-  <!--<gap:splash src="img/ios/splash2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+  <gap:splash src="img/ios/splash2048x1536.png" gap:platform="ios" width="2048" height="1536" />
   <gap:splash src="img/ios/splash768x1024.png" gap:platform="ios" width="768" height="1024" />
   <gap:splash src="img/ios/splash1024x768.png" gap:platform="ios" width="1024" height="768" />
-  <gap:splash src="img/ios/splash320x480.png" gap:platform="ios" width="320" height="480" />-->
-  
-  
-  
-  <!--<gap:splash src="img/android/splash-all.png"  gap:platform="android" gap:density="ldpi" />
+  <gap:splash src="img/ios/splash320x480.png" gap:platform="ios" width="320" height="480" />
+
+
+
+  <gap:splash src="img/android/splash-all.png"  gap:platform="android" gap:density="ldpi" />
   <gap:splash src="img/android/splash-all.png"  gap:platform="android" gap:density="mdpi" />
   <gap:splash src="img/android/splash-all.png"  gap:platform="android" gap:density="hdpi" />
-  <gap:splash src="img/android/splash-all.png" gap:platform="android" gap:density="xhdpi" />-->
+  <gap:splash src="img/android/splash-all.png" gap:platform="android" gap:density="xhdpi" />
 
 
   <access origin="*"/>
- 
+
 
 </widget>
