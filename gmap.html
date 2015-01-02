@@ -16,17 +16,23 @@
 
 
         <div data-role="header">
-            <a href="#" class="ui-btn ui-btn-a ui-btn-left ui-icon-refresh btnGMapRefresh" >Reload</a>
+            <a href="#" class="ui-btn ui-btn-a ui-btn-left ui-icon-arrow-l ui-btn-icon-notext gmapsForView  btnBackToPrevPage"></a>
+            <a href="#" class="ui-btn ui-btn-c ui-btn-left ui-icon-check ui-btn-icon-notext gmapsForEdit" id="btnGmapDone" style="display:none"></a>
+            <a href="#" class="ui-btn ui-btn-e ui-btn-left ui-icon-delete ui-btn-icon-notext gmapsForEdit" id="btnGmapCancel" ></a>
+
+            <a href="#" class="ui-btn ui-btn-a ui-btn-right ui-icon-refresh  btnGMapRefresh" >Reload</a>
 
             <h1 class="pageHeader">Map</h1>
-            <a href="#" class="ui-btn ui-btn-a ui-btn-right ui-icon-check ui-btn-icon-notext" id="btnGmapDone"></a>
 
         </div>
 
         <div role="main" class="ui-content">
 
-            <input id='gmapsTxtAddress' class="form-control" placeholder='click on map or type address here...' type='text' />
-            <div><small id="gmapsFormattedAddress"></small></div>
+            <div id="txtGMapsAutoComplete">
+                <input id='gmapsTxtAddress' class="form-control" placeholder='click on map or type address here...' type='text' />
+                <div><small id="gmapsFormattedAddress"></small></div>
+            </div>
+           
             <div id='gmapsCanvas' class="gmapsCanvas" style="width: 100%; "></div>
 
 
