@@ -111,6 +111,7 @@
             <li data-icon="permissions" class="mngPermissionsModule"><a href="#" id="btnSettingsMenuGoMngSecProfile">Permission Requests</a></li>
             <li data-icon="signout" ><a href="#" id="btnSettingsMenuSignOut">Sign Out</a></li>
             <li data-icon="question"><a href="#" id="btnSettingsMenuAbout">About</a></li>
+            <li data-icon="info"><a href="#" id="btnSettingsMenuSession">Session Info</a></li>
 
             <li data-icon="bars"><a href="#" id="btnSettingsMenuGoMainMenu">Main Menu</a></li>
 
@@ -180,6 +181,9 @@
                             } 
                             circle {
                                 fill: #428ec4;
+                            }
+                            .subViewClass {
+                            margin-top:100px
                             }
                         </style>
 
@@ -400,14 +404,14 @@
 
                     </div>
 
-                    <div class="idxview idxsignin" style="display:none">
+                    <div class="idxview idxsignin subViewClass" style="display:none">
                         <input type="text" data-clear-btn="true" id="txtUserName" value="" placeholder="enter username">
                         <input type="password" data-clear-btn="true" id="txtPassword" value="" placeholder="enter password">
                         <div class="ui-btn ui-mini ui-btn-inline" id="btnSignIn">Sign In</div>
-                        <div class="ui-btn ui-mini  ui-btn-inline btnForgotInfo" >Forgot Info?</div>
+                        <div class="ui-btn ui-mini  ui-btn-inline btnForgotInfo">Forgot Info?</div>
                     </div>
 
-                    <div class="idxview idxforgotinfo" style="display:none">
+                    <div class="idxview idxforgotinfo subViewClass" style="display:none">
                         <input type="text" id="txtRecover" data-clear-btn="true" value="" placeholder="email OR username">
 
                         <div class="ui-btn ui-mini" id="btnRecoverInfo">Recover Info</div>

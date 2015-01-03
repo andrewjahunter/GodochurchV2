@@ -58,8 +58,8 @@
 
                 <div class="ui-field-contain">
                     <div> <label>Dates</label></div>
-                    <input type="text" id="txtAccountBirthdate" placeholder="birthdate" data-bind="value: account.displayBirthDate" />
-                    <input type="text" id="txtAccountAnniversary" placeholder="anniversary" data-bind="value: account.displayAnniversary" />
+                    <input type="text" id="txtAccountBirthdate" readonly placeholder="birthdate" data-bind="value: account.displayBirthDate" />
+                    <input type="text" id="txtAccountAnniversary" readonly placeholder="anniversary" data-bind="value: account.displayAnniversary" />
                 </div>
 
                 <div class="ui-field-contain">
@@ -177,7 +177,7 @@
         </div>
 
 
-        <div data-role="footer" data-theme="g" data-tap-toggle="false" style="overflow:hidden;" data-position="fixed">
+        <div data-role="footer" data-theme="g" data-tap-toggle="true" style="overflow:hidden;" data-position="fixed">
 
 
             <div data-role="navbar" class="profileView profileAccountView" style="display:none">

@@ -47,9 +47,14 @@
                 
                
                 <div class="ui-grid-a" id="btnUnsyncedEvRegInfo" style="display:none">
+                   
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><button class="ui-btn ui-btn-d  ui-mini " id="btnSaveUnSyncedEvRegInfo">Sync</button></div>
+                        <div class="ui-block-b"><button class="ui-btn ui-btn-e ui-mini" id="btnDelUnsyncedEvRegInfo">Delete Cache</button></div>
+                    </div>
+
+                   
                     
-                    <a href="#" class="ui-btn ui-btn-d ui-btn-inline " id="btnSaveUnSyncedEvRegInfo">Save Unsynced Data</a>
-                    <button type="button" class="ui-btn ui-btn-e ui-btn-inline" id="btnDelUnsyncedEvRegInfo" >Delete Cache</button>
                 </div>
 
 
@@ -130,13 +135,13 @@
                                 </td>
                                 <td align="right">
                                     <div data-bind="visible:(coming === 0) ? true:false  ">
-                                        <img src="../img/reddelete.png" class="comingImg" />
+                                        <img src="img/reddelete.png" class="comingImg" />
                                     </div>
                                     <div data-bind="visible:(coming === 1) ? true:false  ">
-                                        <img src="../img/greencheck.png" class="comingImg" />
+                                        <img src="img/greencheck.png" class="comingImg" />
                                     </div>
                                     <div data-bind="visible:(coming === -1) ? true:false  ">
-                                        <img src="../img/orangequestion.png" class="comingImg" />
+                                        <img src="img/orangequestion.png" class="comingImg" />
                                     </div>
                                 </td>
                             </tr>
@@ -200,9 +205,9 @@
 
                 </div>
                 <div class="ui-grid-b">
-                    <div class="ui-block-a"><a href="#" id="btnEvViewAttList" class="ui-btn ui-btn-inline ui-mini ui-icon-bullets ui-btn-icon-left">List</a></div>
-                    <div class="ui-block-b"><a href="#" id="btnEvViewAttScan" class="ui-btn ui-btn-inline ui-mini ui-icon-camera ui-btn-icon-left">Scan</a></div>
-                    <div class="ui-block-c"><a href="#" id="btnEvViewAttDone" class="ui-btn ui-btn-inline ui-mini ui-icon-check ui-btn-icon-left">Done</a></div>
+                    <div class="ui-block-a"><a href="#" id="btnEvViewAttList" class="ui-btn  ui-mini ">List</a></div>
+                    <div class="ui-block-b"><a href="#" id="btnEvViewAttScan" class="ui-btn ui-mini ">Scan</a></div>
+                    <div class="ui-block-c"><a href="#" id="btnEvViewAttDone" class="ui-btn  ui-mini ">Done</a></div>
                 </div>
                 <label for="evAttEnableLocalCache">Enable local cache scanning?</label>
                 <select name="evAttEnableLocalCache" id="evAttEnableLocalCache" data-bind="value:scanType" data-role="slider" data-mini="true">
@@ -341,8 +346,8 @@
                     <p>You need to ensure you are connected to the internet in order to complete this request. </p>
                     <p>Would you like to sync the data to our servers now?</p>
 
-                    <a href="#" class="ui-btn ui-btn-b ui-btn-inline ui-mini  " id="btnEvScanSaveLater">No, sync later</a>
-                    <a href="#" class="ui-btn ui-btn-a ui-btn-inline ui-mini  " id="btnEvScanSaveNow">Yes, sync now</a>
+                    <a href="#" class="ui-btn ui-btn-b ui-btn-inline ui-mini" id="btnEvScanSaveLater">Sync later</a>
+                    <a href="#" class="ui-btn ui-btn-a ui-btn-inline ui-mini" id="btnEvScanSaveNow">Sync now</a>
                 </div>
             </div>
 

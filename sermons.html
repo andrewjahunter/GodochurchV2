@@ -54,36 +54,40 @@
                     <div class="viewSermons" data-bind="attr:{'data-id':id}">
                         <table width="100%">
                             <tr>
-                                <td valign="top" align="left" width="120px">
-                                    <div style="text-align:center; margin-bottom:5px">
-                                        <img width="120" height="120" data-bind="attr: {src: imageUrl}" />
+                                <td colspan="2">
+                                    <div class="ui-bar ui-bar-c" data-bind="visible:isSubscribed" style="font-size:x-small">
+                                        You are subscribed to this channel
+                                    </div>
+                                    <div class="ui-bar ui-bar-d" data-bind="visible:!isSubscribed" style="font-size:x-small">
+                                        You are not subscribed to this channel
                                     </div>
                                 </td>
-                                <td height="120px">
-
-                                    <div style="position:relative; height:100%">
-                                        <div class="ui-content ui-body-g" style="font-size: small; height: 35px; min-height:20px; overflow: hidden; text-overflow:clip; " data-bind="html: description">
-
-                                        </div>
-
-                                        <div style="position:absolute; bottom:10px; width:100%">
-                                            <div class="ui-bar ui-bar-c" data-bind="visible:isSubscribed" style="font-size:x-small">
-                                                You are subscribed to this channel
-                                            </div>
-                                            <div class="ui-bar ui-bar-d" data-bind="visible:!isSubscribed" style="font-size:x-small">
-                                                You are not subscribed to this channel
-                                            </div>
-                                            <div style="font-size: x-small; font-style:italic" data-bind="html:'Hosted by: ' + portalOwnerName + ', Updated:' + lastUpdatedTime">
-
-                                            </div>
-                                        </div>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="left" width="110px">
+                                    <div style="text-align:center; margin-bottom:5px">
+                                        <img width="110" height="110" data-bind="attr: {src: imageUrl}" />
                                     </div>
+                                </td>
+                                <td height="100px" valign="top">
+                                    <div class="ui-content ui-body-g" style="font-size: small; height:80px; max-height:80px; overflow: hidden; text-overflow:clip; " data-bind="html: description">
+
+                                    </div>
+                                  
 
 
 
 
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div style="font-size: x-small; font-style:italic" data-bind="html:'Hosted by: ' + portalOwnerName + ', Updated:' + lastUpdatedTime">
+
+                                    </div>
+                                </td>
+                            </tr>
+                         
                         </table>
                     </div>
 
@@ -105,6 +109,7 @@
             </div>
 
             <div class="sermonView itemsView" style="display:none">
+
                 <h4 style="text-align:center">Channel: <span data-bind="html:selectedFeed.title"></span></h4>
                 <div data-bind=" foreach: selectedFeed.items">
                     <div class="ui-bar ui-bar-b" style="text-align: center">
