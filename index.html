@@ -76,9 +76,9 @@
     </div>
 
 
-    <div data-role="panel" class="ui-body-f" id="appMenuPanel" data-position="right" data-display="push" style="display: none; background-color: #303030 ">
+    <div data-role="panel" class="ui-body-f" data-swipe-close="false"  id="appMenuPanel" data-position="right" data-display="push" style="display: none; background-color: #303030 ">
 
-    
+
         <ul data-role="listview" class="ui-mini" data-inset="true" data-theme="f">
             <li data-icon="user"><a href="#" id="btnAppMenuGoProfile">Profile</a></li>
             <li data-icon="news"><a href="#" id="btnAppMenuGoNews">News</a></li>
@@ -95,21 +95,21 @@
 
             <li data-icon="gear"><a href="#" id="btnAppMenuGoSettings">Settings</a></li>
         </ul>
-        
-        <div style="display:none; font-size:small"  class="ui-bar ui-bar-e" id="appStopMessage"></div>
+
+        <div style="display:none; font-size:small" class="ui-bar ui-bar-e" id="appStopMessage"></div>
         <div style="display:none; font-size:small" class="ui-bar ui-bar-d" id="appNoticeMessage"></div>
 
-</div>
+    </div>
 
 
-    <div data-role="panel" class="ui-body-f" id="appSettingsPanel" data-position="right" data-display="push" style="display: none; background-color: #303030 ">
+    <div data-role="panel" class="ui-body-f" data-swipe-close="false" id="appSettingsPanel" data-position="right" data-display="push" style="display: none; background-color: #303030 ">
 
 
         <ul data-role="listview" class="ui-mini" data-inset="true" data-theme="f">
             <li data-icon="switchdb"><a href="#" id="btnSettingsMenuGoSwitchDb">Switch Db</a></li>
             <li data-icon="loginupdate"><a href="#" id="btnSettingsMenuGoSecProfile">Update Login</a></li>
             <li data-icon="permissions" class="mngPermissionsModule"><a href="#" id="btnSettingsMenuGoMngSecProfile">Permission Requests</a></li>
-            <li data-icon="signout" ><a href="#" id="btnSettingsMenuSignOut">Sign Out</a></li>
+            <li data-icon="signout"><a href="#" id="btnSettingsMenuSignOut">Sign Out</a></li>
             <li data-icon="question"><a href="#" id="btnSettingsMenuAbout">About</a></li>
             <li data-icon="info"><a href="#" id="btnSettingsMenuSession">Session Info</a></li>
 
@@ -183,7 +183,7 @@
                                 fill: #428ec4;
                             }
                             .subViewClass {
-                            margin-top:100px
+                            margin-top:50px
                             }
                         </style>
 
@@ -332,7 +332,7 @@
     <path class="pathlight" d="M0.375,7.941C0.169,7.941,0,8.11,0,8.318v4.578c0,0.206,0.169,0.374,0.375,0.374
 		c5.879,0,10.665,4.784,10.665,10.665c0,0.205,0.166,0.375,0.375,0.375h4.581h0.016c0.209,0,0.377-0.17,0.377-0.375l-0.018-0.117
 		C16.305,15.054,9.152,7.941,0.375,7.941z" />
-                                    <path class="pathlight" d="M24.311,23.818C24.246,10.671,13.531,0,0.375,0C0.169,0,0,0.169,0,0.377v4.711
+                                    <path  d="M24.311,23.818C24.246,10.671,13.531,0,0.375,0C0.169,0,0,0.169,0,0.377v4.711
 		c0,0.207,0.169,0.375,0.375,0.375c10.186,0,18.472,8.287,18.472,18.473c0,0.205,0.168,0.375,0.373,0.375h4.713h0.02
 		c0.205,0,0.379-0.17,0.379-0.375L24.311,23.818z" />
 </g>
